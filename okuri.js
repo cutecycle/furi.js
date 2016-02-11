@@ -9,8 +9,9 @@ var lines = text.split('\n');
 var x;
 
 kuroshiro.init(function(err) {
-	doit();
 	console.log(err);
+	
+	doit();
 });
 
 function doit() { 
@@ -28,13 +29,13 @@ function doit() {
 			//console.log(current_split[1]);
 			
 			ending = ending.concat(' ');
-			var curr = kuroshiro.convert(current_split[1], {mode:'okurigana', to:'hiragana'});
+			var curr = kuroshiro.convert(current_split[1] );
 			ending = ending.concat('     |     ');
 			ending = ending.concat(curr);
 			ending = ending.concat('\n');
 
 			console.log(curr);
-			if(i % 60 == 0) {
+			if(i % 80 == 0) {
 				var x = i;
 				var filename = 'out';
 				filename = filename.concat(x.toString());
